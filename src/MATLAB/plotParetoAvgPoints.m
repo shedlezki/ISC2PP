@@ -1,0 +1,24 @@
+function plotParetoAvgPoints(points,hull)
+right_most = max(points(:, 1));
+left_most = min(points(:, 1));
+top_most = max(points(:, 2));
+bottom_most = min(points(:, 2));
+
+middle_point_x = (right_most + left_most) / 2;
+middle_point_y = (top_most + bottom_most) / 2;
+[yResult, xResult] = getXYOnRightTopFrontier(hull, middle_point_x, middle_point_y);
+mid_y=[xResult,middle_point_y];
+mid_x=[middle_point_x,yResult];
+
+plot(mid_x(1), mid_x(2), 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+plot(mid_y(1), mid_y(2), 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+plot(middle_point_x, middle_point_y, 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+
+mid2_px=(mid_x(1)+mid_y(1))/2;
+mid2_py=(mid_x(2)+mid_y(2))/2;
+[yResult, xResult] = getXYOnRightTopFrontier(hull, mid2_px, mid2_py);
+mid_y=[xResult,mid2_py];
+mid_x=[mid2_px,yResult];
+plot(mid2_px, mid2_py, 'go', 'MarkerSize', 8, 'MarkerFaceColor', 'b');
+plot(mid_x(1), mid_x(2), 'ro', 'MarkerSize', 8, 'MarkerFaceColor', 'b');
+plot(mid_y(1), mid_y(2), 'ro', 'MarkerSize', 8, 'MarkerFaceColor', 'b');

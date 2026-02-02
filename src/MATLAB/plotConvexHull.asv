@@ -1,0 +1,45 @@
+function plotConvexHull(points)
+hullIndices = convhull(points(:, 1), points(:, 2)); % Calculate the convex hull of the reduced points
+hullPoints = points(reducedHullIndices, :); % Get the points that form the convex hull
+
+% Normalize: Divide each reduced point by SP
+dividedPoints = reducedPoints ./ SP; % Divide each reduced point by SP
+dividedHullIndices = convhull(dividedPoints(:, 1), dividedPoints(:, 2)); % Calculate the convex hull of the divided points
+dividedHullPoints = dividedPoints(dividedHullIndices, :); % Get the points that form the convex hull
+plot(dividedHullPoints(:, 1), dividedHullPoints(:, 2), 'm-', 'LineWidth', 2); % Plot the convex hull of the divided points
+
+% Calculate the right-most, left-most, top-most, and bottom-most points
+right_most = max(dividedPoints(:, 1));
+left_most = min(dividedPoints(:, 1));
+top_most = max(dividedPoints(:, 2));
+bottom_most = min(dividedPoints(:, 2));
+
+
+middle_point_x = (right_most + left_most) / 2;
+middle_point_y = (top_most + bottom_most) / 2;
+[yResult, xResult] = getXYOnRightTopFrontier(dividedHullPoints, middle_point_x, middle_point_y);
+mid_y=[xResult,middle_point_y]
+mid_x=[middle_point_x,yResult]
+
+plot(mid_x(1), mid_x(2), 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+plot(mid_y(1), mid_y(2), 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+plot(middle_point_x, middle_point_y, 'go', 'MarkerSize', 3, 'MarkerFaceColor', 'g');
+
+% 
+% % Plot the normalized utility point
+%     plot(normalized_utility(1), normalized_utility(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'b'); % Plot the point in blue
+%     plot(utility(1), utility(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'b'); % Plot the point in blue
+%     plot(optimal_point(1), optimal_point(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'b'); % Plot the point in blue
+% 
+%     plot(normalized_utility2(1), normalized_utility2(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'g'); % Plot the point in blue
+%     plot(utility2(1), utility2(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'g'); % Plot the point in blue
+%     plot(optimal_point2(1), optimal_point2(2), 'bo', 'MarkerSize', 8, 'MarkerFaceColor', 'g'); % Plot the point in blue
+% 
+% 
+%     % Plot the line x = y
+%     x = linspace(min(points(:, 1)), max(points(:, 1)), 100); % Generate x values
+%     y = x; % Since y = x, we can directly assign y
+%     plot(x, y, 'g--', 'LineWidth', 1.5); % Plot the line in green dashed style
+
+
+end

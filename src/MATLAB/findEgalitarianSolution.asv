@@ -1,0 +1,67 @@
+function egalSol = findEgalitarianSolutionUtility(hullPoints, d)
+% Finds egalitarian solution for a convex utility hull
+% Inputs:
+%   hullPoints - Nx2 convex hull points (utility values)
+%   d          - 1x2 disagreement point [u1, u2]
+% Output:
+%   egalSol    - 1x2 point on Pareto frontier with equal gains over d
+
+
+
+% Step 2: Extract the Pareto frontier (upper-right boundary for utilities)
+pareto = findUtilityParetoFrontier(hullPoints);
+disp(pareto)
+% Step 3: Scan frontier edges and find equal-gain intersection
+egalSol = [];
+for i = 1:size(pareto,1)-1
+    p1 = pareto(i, :);
+    p2 = pareto(i+1, :);
+    
+    % Calculate gains over disagreement point
+    g1 = p1 - d;
+    g2 = p2 - d;
+    
+    % Solve for t in: g1(1)*(1-t) + g2(1)*t = g1(2)*(1-t) + g2(2)*t
+    % => (g1(1) - g1(2))*(1-t) + (g2(1) - g2(2))*t = 0
+    diff1 = g1(1) - g1(2);
+    diff2 = g2(1) - g2(2);
+    denom = diff1 - diff2;
+    
+    if abs(denom) < 1e-8
+        continue; % avoid division by zero / no intersection
+    end
+    
+    t = diff1 / denom;
+    
+    if t >= 0 && t <= 1
+        egalSol = (1 - t) * p1 + t * p2;
+        return;
+    end
+end
+
+error('No egalitarian solution found on the Pareto frontier.');
+
+end
+
+
+function frontier = findUtilityParetoFrontier(points)
+% Returns Pareto-optimal points for utility-maximizing 2D outcomes.
+% Points must lie on the convex hull (ordered).
+
+% Remove duplicate last point (if closed loop from convhull)
+if all(points(1,:) == points(end,:))
+    points = points(1:end-1, :);
+end
+
+% Sort by increasing x, then decreasing y
+points = sortrows(points, [1, -2]);
+
+% Construct the upper-right (Pareto) frontier
+frontier = points(1,:);
+for i = 2:size(points,1)
+    if points(i,2) >= frontier(end,2)
+        frontier = [frontier; points(i,:)];
+    end
+end
+end
+

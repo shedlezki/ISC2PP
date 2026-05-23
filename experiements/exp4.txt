@@ -1,0 +1,6 @@
+Namespace(map='maze-32-32-2', scenario=None, density=0.5, magnitude=10, extent=20, correlation=2, iterations=100, output='exp4', visualization=False, load=None, rerun=None)
+Date: Sun Sep 21 23:05:41 2025
+Archive path: ../archive
+Evaluators: ['Min-Min', 'Min-Max', 'Min-Sum', 'Min-Avg', 'Min-Abs', 'Max-Min-Improvement', 'Max-Avg-Improvement', 'MAX-Nash-Value', 'MIN-Nash-Value', 'MIN-Sum-Surplus']
+Social Evaluators: ['Social Sum']
+

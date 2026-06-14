@@ -67,7 +67,7 @@ The central question is which joint paths are stable, efficient, or fair when ag
 
 ### `src/isc2pp.py`
 
-`isc2pp.py` implements the main algorithms corresponding to the intermittent-cooperation path-planning procedures described in the paper.
+`isc2pp.py` implements the main algorithms for intermittent-cooperation path planning.
 
 Important path primitives:
 
@@ -258,7 +258,7 @@ python3 experiement_scripts/normalizeResults.py \
 
 #### Purpose:
 
-- run the canonical sequence of merge, normalize, filter, and summarize steps for every sweep used in the paper
+- run the canonical sequence of merge, normalize, filter, and summarize steps for every experiment group
 - generate `summary_*.csv` and `standard_deviation_*.csv` files that feed the plotting/figure generation step
 
 #### What it does:
@@ -297,7 +297,7 @@ The `--path` option is optional; if omitted, the script defaults to this reposit
 
 ### charts.numbers and final figure data
 
-`charts.numbers` is a spreadsheets file kept in the repository that contains chart-ready tables (the summary rows and standard-deviation columns used to draw error bars). After `analyze_results.sh` finishes, the relevant summary and standard-deviation CSVs can be copied or exported into `charts.numbers` to re-generate the final figures used in the paper. In short:
+`charts.numbers` is a spreadsheets file kept in the repository that contains chart-ready tables (the summary rows and standard-deviation columns used to draw error bars). After `analyze_results.sh` finishes, the relevant summary and standard-deviation CSVs can be copied or exported into `charts.numbers` to re-generate the final figures. In short:
 
 - `summary*.csv` provides the point estimates for plotted series
 - `standard_deviation*.csv` provides the uncertainty level
@@ -320,13 +320,11 @@ The Zenodo record contains the packaged `archive/<eid>.pkl` files, a checksum, a
 
 ## Reproducibility
 
-This repository is intended to accompany the JAIR paper. The code, experiment
-scripts, raw result CSVs, chart-ready workbook, and Zenodo scenario archive are
-provided so that readers can inspect the implementation and reproduce the
-reported analysis pipeline.
+The code, experiment scripts, raw result CSVs, chart-ready workbook, and Zenodo
+scenario archive are provided so that readers can inspect the implementation
+and reproduce the analysis pipeline.
 
-JAIR requires authors to complete the reproducibility checklist in the paper
-source. This repository supports that checklist by providing:
+The repository supports reproducibility by providing:
 
 - source code for the ISC2PP algorithms and experiment runner
 - scripts for generating and analyzing the experiment CSVs
@@ -363,7 +361,7 @@ Result CSVs, chart artifacts, and archived scenario data are released under
 CC BY 4.0; see `LICENSE-DATA.md`.
 
 For citation metadata, see `CITATION.cff`. If you use this repository or the
-Zenodo archive, please cite the accompanying JAIR paper and the Zenodo
+Zenodo archive, please cite this software artifact and the Zenodo
 reproducibility record:
 
 ```text

@@ -10,5 +10,5 @@ License text:
 https://creativecommons.org/licenses/by/4.0/
 ```
 
-Please cite the accompanying paper and the Zenodo reproducibility archive when
-using these data artifacts.
+Please cite this repository and the Zenodo reproducibility archive when using
+these data artifacts.

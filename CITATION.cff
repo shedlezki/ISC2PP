@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite the accompanying JAIR paper and this software artifact."
+message: "If you use this repository, please cite this software artifact and the Zenodo reproducibility archive."
 title: "ISC2PP: Intermittent Strategic Cooperation of Two Selfish Agents on Graphs"
 authors:
   - family-names: Shedlezki

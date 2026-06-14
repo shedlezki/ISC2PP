@@ -1,6 +1,0 @@
-Namespace(map='empty-16-16', scenario=None, density=0.7, magnitude=3, extent=10, correlation=2, iterations=100, output='exp1', visualization=False, load=None, rerun=None)
-Date: Sat Sep 20 23:34:32 2025
-Archive path: ../archive
-Evaluators: ['Min-Min', 'Min-Max', 'Min-Sum', 'Min-Avg', 'Min-Abs', 'Max-Min-Improvement', 'Max-Avg-Improvement', 'MAX-Nash-Value', 'MIN-Nash-Value', 'MIN-Sum-Surplus']
-Social Evaluators: ['Social Sum']
-

@@ -11,18 +11,21 @@ reducedPoints = SP - points;
 
 try
     [nash_point, nash_ratio] = maximize_nash_product(reducedPoints, d);
+    nash_point = SP - nash_point;
 catch
     disp('No Nash solution found.');
 end
 
 try
     [egal_point, egal_ratio] = findEgalitarianSolution(reducedPoints);
+    egal_point = SP - egal_point;
 catch
     disp('No Egalitarian solution found.');
 end
 
 try
     [util_point,util_ratio] = findUtilitarianSolution(reducedPoints);
+    util_point = SP - util_point;
 catch
     disp('No Egalitarian solution found.');
 end
@@ -30,6 +33,7 @@ end
 
 try
     [ks_point, ks_ratio] = maximize_kalai_smorodinsky(reducedPoints, d);
+    ks_point = SP - ks_point;
 catch
     disp('No KS solution found.');
 end

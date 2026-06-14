@@ -318,21 +318,6 @@ https://zenodo.org/records/20691446
 
 The Zenodo record contains the packaged `archive/<eid>.pkl` files, a checksum, and a small README explaining how to restore the archive locally.
 
-## Reproducibility
-
-The code, experiment scripts, raw result CSVs, chart-ready workbook, and Zenodo
-scenario archive are provided so that readers can inspect the implementation
-and reproduce the analysis pipeline.
-
-The repository supports reproducibility by providing:
-
-- source code for the ISC2PP algorithms and experiment runner
-- scripts for generating and analyzing the experiment CSVs
-- raw result CSVs under `results/experiments/`
-- chart-ready tables in `charts.numbers`
-- archived scenario pickles through the Zenodo reproducibility record
-- explicit code and data licenses
-
 ### Quick experiment checklist
 
 1. Record the exact `run_experiments.sh` invocation and the `experiement_scripts/*` versions used.

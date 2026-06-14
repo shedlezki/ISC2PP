@@ -1,0 +1,6 @@
+Namespace(map='empty-8-8', scenario=None, density=0.6, magnitude=10, extent=20, seperation=3, iterations=50, output='experiments/density/data/exp16', description='experiments/density/descriptions/exp16', visualization=False, load=None, rerun=None, size='medium')
+Date: Thu Jun 11 04:53:24 2026
+Archive path: ../archive
+Evaluators: ['Min-Min', 'Min-Max', 'Min-Sum', 'Min-Avg', 'Min-Abs', 'Max-Min-Surplus', 'Max-Min-Improvement', 'Max-Avg-Improvement', 'MAX-Nash-Value', 'MIN-Nash-Value', 'MIN-Sum-Surplus']
+Social Evaluators: ['Social Sum']
+

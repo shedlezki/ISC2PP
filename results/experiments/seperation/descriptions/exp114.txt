@@ -1,0 +1,6 @@
+Namespace(map='empty-8-8', scenario=None, density=0.7, magnitude=10, extent=10, seperation=5, iterations=100, output='experiments/seperation/data/exp114', description='experiments/seperation/descriptions/exp114', visualization=False, load=None, rerun=None, size='medium')
+Date: Sun Jun  7 00:30:51 2026
+Archive path: ../archive
+Evaluators: ['Min-Min', 'Min-Max', 'Min-Sum', 'Min-Avg', 'Min-Abs', 'Max-Min-Surplus', 'Max-Min-Improvement', 'Max-Avg-Improvement', 'MAX-Nash-Value', 'MIN-Nash-Value', 'MIN-Sum-Surplus']
+Social Evaluators: ['Social Sum']
+

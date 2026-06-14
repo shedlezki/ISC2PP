@@ -26,7 +26,26 @@ experiement_scripts/       Experiment and analysis scripts
 results/                   Generated experiment outputs
 archive/                   Local restore target for Zenodo scenario pickles
 charts.numbers             Chart-ready workbook for final figures
+requirements.txt           Python dependencies installable with pip
+LICENSE                    MIT license for source code
+LICENSE-DATA.md            CC BY 4.0 license for result/data artifacts
+CITATION.cff               Citation metadata for GitHub and reference managers
 ```
+
+## Installation
+
+Create a Python environment and install the Python dependencies:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+The bargaining-solution pipeline also requires MATLAB and the MATLAB Engine API
+for Python. Install the MATLAB Engine version that matches your local MATLAB
+installation, then verify that `import matlab.engine` works in the active Python
+environment.
 
 ## Code Documentation
 
@@ -299,6 +318,23 @@ https://zenodo.org/records/20691446
 
 The Zenodo record contains the packaged `archive/<eid>.pkl` files, a checksum, and a small README explaining how to restore the archive locally.
 
+## Reproducibility
+
+This repository is intended to accompany the JAIR paper. The code, experiment
+scripts, raw result CSVs, chart-ready workbook, and Zenodo scenario archive are
+provided so that readers can inspect the implementation and reproduce the
+reported analysis pipeline.
+
+JAIR requires authors to complete the reproducibility checklist in the paper
+source. This repository supports that checklist by providing:
+
+- source code for the ISC2PP algorithms and experiment runner
+- scripts for generating and analyzing the experiment CSVs
+- raw result CSVs under `results/experiments/`
+- chart-ready tables in `charts.numbers`
+- archived scenario pickles through the Zenodo reproducibility record
+- explicit code and data licenses
+
 ### Quick experiment checklist
 
 1. Record the exact `run_experiments.sh` invocation and the `experiement_scripts/*` versions used.
@@ -317,6 +353,22 @@ Core Python dependencies include:
 - [`iscpp-simulator`](https://github.com/shedlezki/ISCPP-Simulator)
 
 The bargaining solution pipeline requires MATLAB and the MATLAB Engine API to be available to Python.
+
+## License and Citation
+
+Source code in this repository is released under the MIT License; see
+`LICENSE`.
+
+Result CSVs, chart artifacts, and archived scenario data are released under
+CC BY 4.0; see `LICENSE-DATA.md`.
+
+For citation metadata, see `CITATION.cff`. If you use this repository or the
+Zenodo archive, please cite the accompanying JAIR paper and the Zenodo
+reproducibility record:
+
+```text
+https://zenodo.org/records/20691446
+```
 
 ## References
 

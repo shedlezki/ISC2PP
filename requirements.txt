@@ -1,0 +1,3 @@
+networkx
+matplotlib
+iscpp-simulator @ git+https://github.com/shedlezki/ISCPP-Simulator.git

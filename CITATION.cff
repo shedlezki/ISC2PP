@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying JAIR paper and this software artifact."
+title: "ISC2PP: Intermittent Strategic Cooperation of Two Selfish Agents on Graphs"
+authors:
+  - family-names: Shedlezki
+    given-names: Itay
+  - family-names: Agmon
+    given-names: Noa
+repository-code: "https://github.com/shedlezki/ISC2PP"
+url: "https://github.com/shedlezki/ISC2PP"
+version: "1.0.0"
+date-released: "2026-06-14"
+license: MIT
+keywords:
+  - multi-agent pathfinding
+  - MAPF
+  - game theory
+  - path planning
+  - bargaining solutions
+references:
+  - type: data
+    title: "ISC2PP Reproducibility Archive"
+    authors:
+      - family-names: Shedlezki
+        given-names: Itay
+      - family-names: Agmon
+        given-names: Noa
+    url: "https://zenodo.org/records/20691446"
+    year: 2026
